@@ -13,16 +13,17 @@ function getRandomCocktail() {
         .then(data => {
             const cocktailData = document.getElementById('cocktailData');
             const drink = data.drinks[0];
+            
             // Display the cocktail data
             cocktailData.innerHTML = `
-                <h2>${drink.strDrink}</h2>
-                <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
-                <p>Category: ${drink.strCategory}</p>
-                <p>Glass: ${drink.strGlass}</p>
-                <p>Instructions: ${drink.strInstructions}</p>
-                <p>Ingredients:</p>
-                <ul>
-                    ${getIngredientsList(drink)} // Call a function to generate a list of ingredients
+                <h2 class="cocktail-title">${drink.strDrink}</h2>
+                <img class="cocktail-image" src="${drink.strDrinkThumb}" alt="${drink.strDrink}">
+                <p class="cocktail-category">Category: ${drink.strCategory}</p>
+                <p class="cocktail-glass">Glass: ${drink.strGlass}</p>
+                <p class="cocktail-instructions">Instructions: ${drink.strInstructions}</p>
+                <p class="cocktail-ingredients">Ingredients:</p>
+                <ul class="ingredient-list">
+                    ${getIngredientsList(drink)} 
                 </ul>
             `;
         })
